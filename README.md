@@ -7,21 +7,10 @@ Step 1:
 sudo apt update
 sudo apt install docker.io -y
 
-
+===============================================================================================
 Step 2:
-#clone this git repo
-
-
-Step 3:
-#execute below 2 commands only
-
-
-docker build -t chat-frontend .
-docker run -d -p 3000:80 chat-frontend
-
-
-
-
+#create a docker file
+vim dockerfile
 
 
 
@@ -55,3 +44,15 @@ COPY --from=build /app/dist /usr/share/nginx/html
 EXPOSE 80
 
 CMD ["nginx", "-g", "daemon off;"]
+
+
+
+==============================================================================================================
+Step 3:
+#execute below 2 commands only
+
+
+docker build -t chat-frontend .
+docker run -d -p 3000:80 chat-frontend
+
+
